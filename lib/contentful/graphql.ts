@@ -9,7 +9,6 @@ interface GraphQLResponse<TData> {
   errors?: GraphQLError[];
 }
 
-const defaultSpaceId = "qdbryeo6ke3h";
 
 export async function queryContentful<TData>(
   query: string,
@@ -26,8 +25,14 @@ export async function queryContentful<TData>(
     );
   }
 
-  const spaceId =
-    process.env.CONTENTFUL_SPACE_ID ?? process.env.SPACE_ID ?? defaultSpaceId;
+  const spaceId = process.env.CONTENTFUL_SPACE_ID ?? process.env.SPACE_ID;
+
+  if (!spaceId) {
+    throw new Error(
+      "Missing Contentful space ID. Set SPACE_ID or CONTENTFUL_SPACE_ID in the server environment.",
+    );
+  }
+
   const environment = process.env.CONTENTFUL_ENVIRONMENT ?? "master";
   const endpoint = `https://graphql.contentful.com/content/v1/spaces/${encodeURIComponent(spaceId)}/environments/${encodeURIComponent(environment)}`;
 

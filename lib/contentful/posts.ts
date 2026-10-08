@@ -121,9 +121,9 @@ function toBlogPost(entry: GraphQLBlogPost | null | undefined): BlogPost | null 
 }
 
 export async function getBlogPosts(): Promise<BlogPostSummary[]> {
-  "use cache";
+  "use cache: remote";
 
-  cacheLife("hours");
+  cacheLife("max");
   cacheTag(blogPostsCacheTag);
 
   const data = await queryContentful<BlogPostsResponse>(blogPostsQuery, {
@@ -137,9 +137,9 @@ export async function getBlogPosts(): Promise<BlogPostSummary[]> {
 }
 
 export async function getBlogPostBySlug(slug: string): Promise<BlogPost | null> {
-  "use cache";
+  "use cache: remote";
 
-  cacheLife("hours");
+  cacheLife("max");
   cacheTag(blogPostsCacheTag);
 
   const data = await queryContentful<BlogPostsResponse>(blogPostBySlugQuery, {
