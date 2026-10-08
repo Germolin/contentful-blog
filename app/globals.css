@@ -47,3 +47,126 @@ body {
   color: var(--foreground);
   font-family: var(--font-merriweather), Georgia, serif;
 }
+
+.rich-text {
+  color: var(--muted);
+  font-size: 1.0625rem;
+  line-height: 1.85;
+}
+
+.rich-text > :first-child {
+  margin-top: 0;
+}
+
+.rich-text p,
+.rich-text ul,
+.rich-text ol,
+.rich-text blockquote,
+.rich-text pre,
+.rich-text table,
+.rich-text hr {
+  margin-block: 1.25rem;
+}
+
+.rich-text h1,
+.rich-text h2,
+.rich-text h3,
+.rich-text h4,
+.rich-text h5,
+.rich-text h6 {
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+  color: var(--foreground);
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.rich-text h1 {
+  font-size: 2rem;
+}
+
+.rich-text h2 {
+  font-size: 1.75rem;
+}
+
+.rich-text h3 {
+  font-size: 1.5rem;
+}
+
+.rich-text h4 {
+  font-size: 1.25rem;
+}
+
+.rich-text h5,
+.rich-text h6 {
+  font-size: 1.125rem;
+}
+
+.rich-text ul,
+.rich-text ol {
+  padding-inline-start: 1.5rem;
+}
+
+.rich-text ul {
+  list-style-type: disc;
+}
+
+.rich-text ol {
+  list-style-type: decimal;
+}
+
+.rich-text li + li {
+  margin-top: 0.5rem;
+}
+
+.rich-text blockquote {
+  border-inline-start: 2px solid var(--accent);
+  padding-inline-start: 1rem;
+  color: var(--foreground);
+}
+
+.rich-text a {
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
+.rich-text code {
+  border-radius: 0.25rem;
+  background: var(--surface-raised);
+  padding: 0.125rem 0.375rem;
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 0.9em;
+}
+
+.rich-text pre {
+  overflow-x: auto;
+  border: 1px solid var(--border);
+  background: var(--surface-raised);
+  padding: 1rem;
+  font-family: var(--font-geist-mono), monospace;
+}
+
+.rich-text hr {
+  border: 0;
+  border-top: 1px solid var(--border);
+}
+
+.rich-text table {
+  display: block;
+  width: 100%;
+  overflow-x: auto;
+  border-collapse: collapse;
+}
+
+.rich-text th,
+.rich-text td {
+  border: 1px solid var(--border);
+  padding: 0.625rem 0.75rem;
+  text-align: left;
+}
+
+.rich-text th {
+  color: var(--foreground);
+  font-weight: 700;
+}
