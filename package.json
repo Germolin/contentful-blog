@@ -12,6 +12,7 @@
     "@contentful/node-apps-toolkit": "^4.1.0",
     "@contentful/rich-text-react-renderer": "^16.2.2",
     "@contentful/rich-text-types": "^17.2.7",
+    "@vercel/analytics": "^2.0.1",
     "contentful": "^11.12.10",
     "next": "16.4.0",
     "react": "19.3.0",
